@@ -1,6 +1,9 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
+import Icon from "../icon/icon"
+import Temperature from "../temperature/temperature"
+
 class Weather extends React.Component {
   constructor(props) {
     super(props);
@@ -8,8 +11,7 @@ class Weather extends React.Component {
     this.state = {
     };
 
-    // this.handleSubmit = this.handleSubmit.bind(this);
-    // this.renderErrors = this.renderErrors.bind(this);
+    this.getWeather = this.getWeather.bind(this);
   }
 
   componentDidMount() {
@@ -18,39 +20,36 @@ class Weather extends React.Component {
       this.props.getWeather(this.props.geolocation.coords)})
   }
 
-  // update(field) {
-  //   return e => this.setState({
-  //     [field]: e.currentTarget.value
-  //   });
-  // }
+  getWeather() {
+    if (this.props.weather.weather) {
+      let description = this.props.weather.weather[0].description
+      let location = this.props.weather.name
+      console.log(this.props.weather)
+      return (
+        <div>
+          <Icon icon={this.props.weather.weather[0].icon}/>
+          {description} in {location}
+          <br/>
+          <Temperature temperature={this.props.weather.main.temp}/>
 
-  // handleSubmit(e) {
-  //   e.preventDefault();
-  //   console.log(this)
-  //   let user = {
-  //     email: this.state.email,
-  //     password: this.state.password
-  //   };
-
-  //   this.props.login(user); 
-  // }
-
-  renderErrors() {
-    return(
-      <ul>
-        {Object.keys(this.state.errors).map((error, i) => (
-          <li key={`error-${i}`}>
-            {this.state.errors[error]}
-          </li>
-        ))}
-      </ul>
-    );
+        </div>
+      )
+    } else {
+      return (
+        <div>
+          Fetching Weather Data for your Location
+          <br/>
+          If this message persits please check and make sure that 
+          sharing location is permitted by your browser.
+        </div>
+      )
+    }
   }
 
   render() {
     return (
       <div>
-        
+        {this.getWeather()}
       </div>
     );
   }
