@@ -27,7 +27,7 @@ class Weather extends React.Component {
       let location = this.props.weather.name
       console.log(this.props.weather)
       return (
-        <div id="weather">
+        <div className="weather">
           <div>WEATHER by JITSU</div>
           <Icon icon={this.props.weather.weather[0].icon}/>
           <div className="descr">
@@ -43,12 +43,11 @@ class Weather extends React.Component {
       )
     } else {
       return (
-        <div id="weather">
+        <div className="weather">
           Fetching Weather Data for your Location...
           <br/>
           If this message persits please check and make sure that 
           sharing location is permitted by your browser.
-
         </div>
       )
     }

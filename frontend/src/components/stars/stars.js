@@ -5,9 +5,9 @@ class Stars extends React.Component {
   render() {
     return (
         <div>
-            <div id="stars"/>
-            <div id="stars2"/>
-            <div id="stars3"/>
+            <div className="stars"/>
+            <div className="stars2"/>
+            <div className="stars3"/>
         </div>
         );
       }
