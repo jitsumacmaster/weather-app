@@ -50,7 +50,7 @@ class Weather extends React.Component {
   render() {
     return (
       <div className="weather">
-        <div>WEATHER by JITSU</div>
+        <div className="title">WEATHER by JITSU</div>
         {this.getWeather()}
         <Stars/>
       </div>

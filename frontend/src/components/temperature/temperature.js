@@ -30,11 +30,11 @@ class Temperature extends React.Component {
             <div className="temperature">
                 <div>
                     {this.convertTemperature()}&deg;
-                    {this.state.celcius ? 'C' : 'F'} |
+                    {this.state.celcius ? 'C ' : 'F '}
                 </div>
                 <div>
-                    <button className="button--C" onClick={this.celcius}>&deg;C</button>
-                    <button className="button--F" onClick={this.farenheit}>&deg;F</button>
+                    <button type="button" className="button--C" onClick={this.celcius}>&deg;C</button>
+                    <button type="button" className="button--F" onClick={this.farenheit}>&deg;F</button>
                 </div>
 
             </div>
