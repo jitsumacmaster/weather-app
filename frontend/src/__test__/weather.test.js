@@ -18,6 +18,8 @@ const mock_weather = {
     name: "El Cerrito",
 }
 
+const mock_location = "El Cerrito"
+
 
 it("renders without crashing", () => {
     shallow(<Weather 
@@ -46,7 +48,7 @@ it("renders error message when location not provided by client browser", () => {
             geolocation={{}}
             getWeather={mock_getWeather}
         />);
-    const errorMessage = "If this message persits please check and make sure that sharing location is permitted by your browser.";
+    const errorMessage = "If this message persits please check and make sure that sharing location is permitted by your browser or select a location using the searchbar.";
     
     expect(wrapper.contains(errorMessage)).toEqual(true);
 });
@@ -72,6 +74,7 @@ it("renders weather description and location when weather API succeeds", () => {
             getGeoLocation={mock_getGeoLocation}
             geolocation={mock_getGeoLocation}
             getWeather={mock_getWeather}
+            location={mock_location}
             weather={mock_weather}
         />);
     const description = "clear sky";

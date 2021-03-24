@@ -1,5 +1,3 @@
-// import axios from 'axios';
-
 export const getGeoLocationFromBrowser = () => {
 
   return new Promise((resolve, reject) => {
