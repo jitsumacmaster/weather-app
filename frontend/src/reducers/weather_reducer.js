@@ -8,10 +8,8 @@ import { RECEIVE_WEATHER, RECEIVE_WEATHER_ERROR } from '../actions/weather_actio
         newState = action.weather;
         return newState;
       case RECEIVE_WEATHER_ERROR:
-        return {
-          ...state,
-          weatherAPIerror : action.error
-        }
+        newState.weatherAPIerror = action.error;
+        return newState
       default:
         return state;
     }

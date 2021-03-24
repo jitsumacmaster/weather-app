@@ -2,12 +2,12 @@
 <html lang="en">
   <head>
     <meta http-equiv="Content-Security-Policy"
-          content="default-src 'self'; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src *; img-src *">
+    content="default-src 'self'; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src *; img-src *; script-src-elem *;">
     <meta charset="utf-8">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#000000">
-
+    
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
     <title>WEATHER by JITSU</title>
@@ -18,5 +18,7 @@
       You need to enable JavaScript to run this app.
     </noscript>
     <div id="root"></div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAY3tC0DhsEi77I--BbZzKKNhOMOks22UI&libraries=places"></script>
   </body>
-</html>
+  </html>
+  

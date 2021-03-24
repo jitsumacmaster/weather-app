@@ -1,22 +1,21 @@
 import { connect } from 'react-redux';
 import { getWeather } from '../../actions/weather_actions';
-import { getGeoLocation } from '../../actions/geolocation_actions';
-import Weather from './weather';
+import { setLocation } from '../../actions/location_actions';
+import Search from './search';
 
 const mapStateToProps = (state) => {
   return {
-    geolocation: state.geolocation,
     weather: state.weather,
     weatherAPIerror: state.weatherAPIerror,
-    location: state.location.location
+    location: state.location
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getGeoLocation: () => dispatch(getGeoLocation()),
     getWeather: location => dispatch(getWeather(location)),
+    setLocation: location => dispatch(setLocation(location)),
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Weather);
+export default connect(mapStateToProps, mapDispatchToProps)(Search);

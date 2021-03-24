@@ -74,7 +74,7 @@ html {
 
 .weather {
   position: absolute;
-  top: 10rem;
+  top: 6.5rem;
   left: 0;
   right: 0;
   
@@ -90,6 +90,11 @@ html {
     background: -webkit-linear-gradient(white, #38495a);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+
+  .loading {
+    margin: 20px;
+    font-size: 30px;
   }
 }
     
@@ -144,3 +149,21 @@ html {
 }
 
 
+.search {
+  font-family: 'lato',sans-serif;
+  box-sizing: border-box;
+  line-height: 1;
+  margin: 1rem;
+  text-decoration: none;
+
+  .autocomplete-dropdown-container {
+    background: white;
+    position: relative;
+    z-index: 10;
+  }
+
+  .suggestion-item--active {
+    background: grey;
+
+  }
+}

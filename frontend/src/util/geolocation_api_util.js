@@ -8,7 +8,6 @@ export const getGeoLocationFromBrowser = () => {
           .query({ name: "geolocation" })
           .then(function (result) {
             if (result.state === "granted") {
-              console.log(result.state);
               //If granted then you can directly call your function here
               navigator.geolocation.getCurrentPosition(geolocationData => {
                 resolve(geolocationData);

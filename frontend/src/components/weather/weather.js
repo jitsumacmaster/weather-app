@@ -12,7 +12,8 @@ class Weather extends React.Component {
 
   componentDidMount() {
     this.props.getGeoLocation()
-              .then(() => this.props.getWeather(this.props.geolocation.coords));
+              .then(() => this.props.getWeather(this.props.geolocation.coords))
+              // .ther(() => this.setState({location: this.props.weather.name}));
   }
 
   getWeather() {
@@ -24,12 +25,12 @@ class Weather extends React.Component {
       )
     } else if (this.props.weather?.weather) {
       let description = this.props.weather.weather[0].description
-      let location = this.props.weather.name
+      let location = this.props.location
       return (
         <div>
           <Icon icon={this.props.weather.weather[0].icon}/>
           <div className="descr">
-            {description} in {location}
+            {description} for {location}
           </div>
           <br/>
           <Temperature temperature={this.props.weather.main.temp}/>
@@ -37,11 +38,12 @@ class Weather extends React.Component {
       )
     } else {
       return (
-        <div>
+        <div className="loading">
           Fetching Weather Data for your Location...
           <br/>
           If this message persits please check and make sure that 
-          sharing location is permitted by your browser.
+          sharing location is permitted by your browser or select a 
+          location using the searchbar.
         </div>
       )
     }
