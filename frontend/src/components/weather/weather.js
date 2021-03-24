@@ -1,34 +1,26 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
-
-import Icon from "../icon/icon"
-import Temperature from "../temperature/temperature"
-import Stars from "../stars/stars"
+import Icon from "../icon/icon";
+import Temperature from "../temperature/temperature";
+import Stars from "../stars/stars";
 
 class Weather extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-    };
 
     this.getWeather = this.getWeather.bind(this);
   }
 
   componentDidMount() {
     this.props.getGeoLocation()
-    .then(() => {
-      this.props.getWeather(this.props.geolocation.coords)})
+              .then(() => this.props.getWeather(this.props.geolocation.coords));
   }
 
   getWeather() {
-    if (this.props.weather.weather) {
+    if (this.props.weather?.weather) {
       let description = this.props.weather.weather[0].description
       let location = this.props.weather.name
-      console.log(this.props.weather)
       return (
-        <div className="weather">
-          <div>WEATHER by JITSU</div>
+        <div>
           <Icon icon={this.props.weather.weather[0].icon}/>
           <div className="descr">
             {description} in {location}
@@ -36,14 +28,11 @@ class Weather extends React.Component {
           <br/>
           
           <Temperature temperature={this.props.weather.main.temp}/>
-
-
-
         </div>
       )
     } else {
       return (
-        <div className="weather">
+        <div>
           Fetching Weather Data for your Location...
           <br/>
           If this message persits please check and make sure that 
@@ -55,7 +44,8 @@ class Weather extends React.Component {
   
   render() {
     return (
-      <div>
+      <div className="weather">
+        <div>WEATHER by JITSU</div>
         {this.getWeather()}
         <Stars/>
       </div>
@@ -63,4 +53,4 @@ class Weather extends React.Component {
   }
 }
 
-export default withRouter(Weather);
+export default Weather;
