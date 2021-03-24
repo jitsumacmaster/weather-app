@@ -7,6 +7,7 @@ const mapStateToProps = (state) => {
   return {
     geolocation: state.geolocation,
     weather: state.weather,
+    weatherAPIerror: state.weatherAPIerror
   };
 };
 

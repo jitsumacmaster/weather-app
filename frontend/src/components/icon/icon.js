@@ -1,5 +1,4 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
 
 class Icon extends React.Component {
   render() {
@@ -9,4 +8,4 @@ class Icon extends React.Component {
       }
 }
 
-export default withRouter(Icon);
+export default Icon;

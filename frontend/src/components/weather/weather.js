@@ -16,7 +16,13 @@ class Weather extends React.Component {
   }
 
   getWeather() {
-    if (this.props.weather?.weather) {
+    if(this.props.weatherAPIerror) {
+      return (
+        <div>
+          We're sorry. We could not retrieve the weather for your location.
+        </div>
+      )
+    } else if (this.props.weather?.weather) {
       let description = this.props.weather.weather[0].description
       let location = this.props.weather.name
       return (
@@ -26,7 +32,6 @@ class Weather extends React.Component {
             {description} in {location}
           </div>
           <br/>
-          
           <Temperature temperature={this.props.weather.main.temp}/>
         </div>
       )

@@ -1,5 +1,4 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
 
 class Temperature extends React.Component {
     constructor(props) {
@@ -34,8 +33,8 @@ class Temperature extends React.Component {
                     {this.state.celcius ? 'C' : 'F'} |
                 </div>
                 <div>
-                    <button type="button" onClick={this.celcius}>&deg;C</button>
-                    <button type="button" onClick={this.farenheit}>&deg;F</button>
+                    <button className="button--C" onClick={this.celcius}>&deg;C</button>
+                    <button className="button--F" onClick={this.farenheit}>&deg;F</button>
                 </div>
 
             </div>
@@ -43,4 +42,4 @@ class Temperature extends React.Component {
     }
 }
 
-export default withRouter(Temperature);
+export default Temperature;

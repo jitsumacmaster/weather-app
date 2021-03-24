@@ -1,7 +1,6 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
 
-class Stars extends React.Component {
+class Stars extends React.PureComponent {
   render() {
     return (
         <div>
@@ -13,4 +12,4 @@ class Stars extends React.Component {
       }
 }
 
-export default withRouter(Stars);
+export default Stars;
