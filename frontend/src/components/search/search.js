@@ -45,20 +45,10 @@ class Search extends React.Component {
                   const className = suggestion.active
                   ? 'suggestion-item--active'
                   : 'suggestion-item';
-                  // inline style for demonstration purpose
-                  // const style = suggestion.active
-                  // ? { backgroundColor: '#fafafa', cursor: 'pointer' }
-                  // : { backgroundColor: '#ffffff', cursor: 'pointer' };
-                  console.log(getSuggestionItemProps(suggestion, {
-                    className,
-                    // style,
-                    description: suggestion.description,
-                  }))
                   return (
                     <SearchSuggestion 
                       {...getSuggestionItemProps(suggestion, {
                         className,
-                        // style,
                         description: suggestion.description,
                       })}
                       key={`suggestion-${i}`}
